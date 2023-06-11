@@ -1,4 +1,4 @@
-# Delta SysAd Task-1
+# Delta SysAd Task-2
 
 Hello and welcome to my Delta Inductions Task 1 for the Sysad domain.
 To begin open up the terminal and enter the following commands
@@ -23,7 +23,7 @@ cd /home/HAD
 
 ```
 cd /home
-git clone https://github.com/ChickenWhisky/Delta_SusAd_Task1.git
+git clone https://github.com/ChickenWhisky/Delta_SusAd_Task2.git
 ```
 
 ### Extra files for the sake of testing above scripts
