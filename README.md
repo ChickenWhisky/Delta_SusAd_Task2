@@ -1,40 +1,39 @@
 # Delta SysAd Task-2
 
-Hello and welcome to my Delta Inductions Task 1 for the Sysad domain.
+Hello and welcome to my Delta Inductions Task 2 for the Sysad domain.
 To begin open up the terminal and enter the following commands
 
-## On Starting the server
+## Setup
 
-* Open the terminal and enter the following block of code
-```
-sudo apt update
-sudo apt -y upgrade
-sudo apt install sudo acl wget git
-sudo apt-get install at
-
-```
-* If the user HAD hasnt been created then do the following
-```
-sudo useradd -m -d /home/HAD HAD
-cd /home/HAD
+To initialise the reverse proxy and server mess.txt 
+```bash
+$ chmod +x ./initialise.sh
+$ ./initialise.sh
 ```
 
-* Sign in to User HAD & execute the following on the terminal 
-
-```
-cd /home
-git clone https://github.com/ChickenWhisky/Delta_SusAd_Task2.git
+To activate the server and setup phpadmin and the userdetails website
+```bash
+$ docker compose up --build
 ```
 
-### Extra files for the sake of testing above scripts
-* putongit.sh is a simple script that simplifies the process of pushing commits to github
-* reset.sh is a script written to delete all users & directories created by genStudent.sh
+To add data to the Postgress database
+```bash
+$ python3 ./add_data_to_db.py
+```
 
 ### Normal Mode
-- [X] genStudent.sh
-- [X] permit.sh
-- [X] updateDefaulter.sh
-- [X] messAllocation.sh
-- [X] feeBreakup.sh
+- [X] Dockerise Task 1
+    - [X] Display the file using Apache from the local directory of the docker container. Proxy the requests to the container.
+    -[X] Make the file accessible locally using gamma-z.hm instead of default localhost. Opening gamma-z.hm should display the text file directly.
+- [X] Store user details in Database
+    - [X] Create a database to store all the user details instead of the files in the students' directory.
+    - [X] Dockerise the database along with the server. Use docker-compose.
 ### Superuser Mode
-- [X] signOut.sh
+- [ ] Setup a cronjob to periodically take database backup. The backup should take place at 10:10 every three days of month and on sundays for May, June and August. Do not setup multiple cronjobs.
+- [X] Modify the docker setup to ensure that restarting docker will not destroy the data from database.
+- [X] Add PHPMyAdmin docker service for viewing the database. Also create an account in PHPMyAdmin with read-only permissions to read the user details in the DB.
+- [X] Create a website to display the user details based on their permissions.
+    - [X] Implement login feature with userid and password. Get the permissions based on the logged in userid.
+    - [X] HAD should be able to see everyone's details.
+    - [X] Wardens should be able to see only their hostel's student's details.
+    - [X] Students should only be able to see their own details.

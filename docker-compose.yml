@@ -12,6 +12,18 @@ services:
       - db:/var/lib/postgresql/data
     networks:
       - pgnetwork
+    
+  server:
+    build: ./website/
+    restart: always
+    ports:
+      - '5000:5000'
+    depends_on:
+      - db
+    networks:
+      - pgnetwork
+    links:
+      - db
 
   pgadmin:
     image: dpage/pgadmin4
