@@ -24,7 +24,7 @@ $ python3 ./add_data_to_db.py
 ### Normal Mode
 - [X] Dockerise Task 1
     - [X] Display the file using Apache from the local directory of the docker container. Proxy the requests to the container.
-    -[X] Make the file accessible locally using gamma-z.hm instead of default localhost. Opening gamma-z.hm should display the text file directly.
+    - [X] Make the file accessible locally using gamma-z.hm instead of default localhost. Opening gamma-z.hm should display the text file directly.
 - [X] Store user details in Database
     - [X] Create a database to store all the user details instead of the files in the students' directory.
     - [X] Dockerise the database along with the server. Use docker-compose.

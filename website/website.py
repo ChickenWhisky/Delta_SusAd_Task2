@@ -22,12 +22,12 @@ def get_all_rows():
     return rows
 
 def get_hostel_rows(hostel):
-    cursor.execute(f"SELECT * FROM studentdetails WHERE hostel = %s", (hostel,))
+    cursor.execute("SELECT * FROM studentdetails WHERE hostel = %s", (hostel,))
     rows = cursor.fetchall()
     return rows
 
 def get_student_row(rollno):
-    cursor.execute(f"SELECT * FROM studentdetails WHERE rollno = %s", (rollno,))
+    cursor.execute("SELECT * FROM studentdetails WHERE rollno = %s", (rollno,))
     row = cursor.fetchall()
     return row
 
@@ -36,7 +36,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
-        return render_template('login.html')
+        return render_template('loggin.html')
     elif request.method == 'POST':
         u = request.form['username']
         if u == "HAD":
