@@ -14,6 +14,12 @@ sudo ln -s /etc/apache2/sites-available/gamma-z.hm.conf /etc/apache2/sites-enabl
 sudo a2ensite gamma-z.hm.conf
 sudo a2dissite 000-default.conf
 
-
 echo "127.0.0.1 gamma-z.hm" | sudo tee -a /etc/hosts > /dev/null
 sudo systemctl reload apache2
+sudo chmod +x ./backup.sh
+sudo chmod +x ./cronjob_setter.sh
+
+
+
+
+

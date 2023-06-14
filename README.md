@@ -20,6 +20,10 @@ To add data to the Postgress database
 ```bash
 $ python3 ./add_data_to_db.py
 ```
+To run the cronjob to back up data periodically
+```bash
+$ ./cronjob_setter.sh
+```
 
 ### Normal Mode
 - [X] Dockerise Task 1
